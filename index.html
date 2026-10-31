@@ -52,14 +52,16 @@ h1,h2,h3{text-wrap:balance;margin:0}
 .logo-mark i:nth-child(2){opacity:.7}.logo-mark i:nth-child(3){opacity:.45}.logo-mark i:nth-child(4){opacity:.25}.logo-mark i:nth-child(5){background:var(--signal)}
 .logo b{font-family:var(--en);font-weight:600;font-size:22px;letter-spacing:.14em;line-height:1}
 .logo small{display:block;font-size:11px;color:inherit;opacity:.7;letter-spacing:.02em;margin-top:3px;font-weight:400}
-.nav{display:flex;align-items:center;gap:34px}
-.nav a{font-size:15px;font-weight:500;position:relative;padding:6px 0}
-.nav a span{display:block;font-family:var(--en);font-size:10px;letter-spacing:.12em;color:inherit;opacity:.62;font-weight:400;line-height:1;margin-bottom:3px}
-.nav a.on::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:currentColor}
-.nav .cta{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.55);padding:12px 20px;font-size:14px;transition:.35s}
-.hd.solid .nav .cta{background:var(--ink);border-color:var(--ink)}
-.nav .cta span{color:inherit;opacity:.7}
-.nav .cta.on::after{display:none}
+.nav{display:flex;align-items:center;gap:4px;padding:5px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);box-shadow:inset 0 1px 0 rgba(255,255,255,.25);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:background .35s,border-color .35s,box-shadow .35s}
+.hd.solid .nav{background:linear-gradient(135deg,rgba(255,255,255,.85),rgba(232,235,239,.65));border-color:rgba(255,255,255,.95);box-shadow:0 10px 28px -14px rgba(20,21,22,.3),inset 0 1px 0 #fff}
+.nav a{font-size:15px;font-weight:500;padding:9px 20px;border-radius:999px;white-space:nowrap;transition:background .3s,color .3s,box-shadow .3s}
+.nav a span{display:none}
+.nav a:hover{background:rgba(255,255,255,.18)}
+.hd.solid .nav a:hover{background:rgba(255,255,255,.8)}
+.nav a.on{background:rgba(255,255,255,.95);color:var(--ink);box-shadow:0 4px 14px -6px rgba(0,0,0,.35)}
+.hd.solid .nav a.on{background:rgba(20,21,22,.9);color:#fff;box-shadow:0 6px 16px -6px rgba(20,21,22,.55),inset 0 1px 0 rgba(255,255,255,.2)}
+.nav .cta,.hd.solid .nav .cta{background:var(--signal);color:#fff;margin-left:4px;box-shadow:0 6px 16px -6px rgba(196,18,47,.6)}
+.nav .cta:hover,.hd.solid .nav .cta:hover{background:#a50f27}
 .burger{display:none;width:40px;height:40px;position:relative}
 .burger i{position:absolute;left:8px;right:8px;height:2px;background:var(--ink);transition:.25s}
 .burger i:nth-child(1){top:14px}.burger i:nth-child(2){top:24px}
@@ -72,20 +74,17 @@ em.m{font-style:normal}
 .logo-mark{width:26px;height:26px}
 .logo b{font-size:17px}
 .logo small{display:none}
-.nav{gap:14px;overflow-x:auto;scrollbar-width:none;min-width:0}
+.nav{gap:2px;padding:4px;overflow-x:auto;scrollbar-width:none;min-width:0}
 .nav::-webkit-scrollbar{display:none}
-.nav a{font-size:14px;white-space:nowrap;flex:none}
-.nav a span{display:none}
-.nav a.on::after{bottom:0}
-.nav .cta{padding:8px 12px;font-size:13px}
+.nav a{font-size:14px;flex:none;padding:7px 12px}
+.nav .cta{font-size:13px;margin-left:2px}
 .tabs{top:calc(60px + env(safe-area-inset-top,0px))}
 .tabs a{padding:14px 12px}
 }
 @media(max-width:430px){
 .logo b{display:none}
-.nav{gap:12px}
-.nav a{font-size:13.5px}
-.nav .cta{padding:7px 10px}
+.nav{gap:0;padding:3px}
+.nav a{font-size:13px;padding:7px 9px}
 em.m{display:none}
 }
 /* views */
@@ -133,11 +132,12 @@ em.m{display:none}
 @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
 /* about band with image */
 .about{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(28px,5vw,80px);align-items:stretch}
-.about .ph{aspect-ratio:auto;height:100%;min-height:360px}
+.about .ph{aspect-ratio:auto;height:clamp(380px,calc(100vh - 210px),620px)}
+.about .ph img{position:absolute;inset:0}
 .about .txt{display:flex;flex-direction:column;gap:18px;min-width:0}
 .about .txt .spec{margin-top:auto}
 .about h2{font-size:clamp(26px,3.2vw,38px);font-weight:700;line-height:1.35}
-.about p{margin:0;color:var(--sub);max-width:460px}
+.about p{margin:0;color:var(--sub)}
 @media(max-width:800px){.about{grid-template-columns:1fr}.about .ph{height:auto;aspect-ratio:4/3;min-height:0}}
 /* process */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink)}
@@ -326,8 +326,8 @@ fieldset{border:0;margin:0;padding:0}
 <div class="txt">
 <span class="eyebrow">About GYEOL</span>
 <h2>원단의 결을 알고,<br>창의 결에 맞춥니다</h2>
-<p>결은 원단을 직접 고르고 자체 봉제실에서 재단합니다. 기성 사이즈를 줄여 쓰지 않고, 실측한 창 크기에 맞춰 주름 배수와 기장을 처음부터 정해 만듭니다.</p>
-<p>380종의 원단 샘플을 들고 방문해 실제 창 앞에서 빛을 비춰 보며 고를 수 있습니다.</p>
+<p>결은 원단을 직접 고르고 자체 봉제실에서 재단합니다.<br>기성 사이즈를 줄여 쓰지 않고, 실측한 창 크기에 맞춰<br>주름 배수와 기장을 처음부터 정해 만듭니다.</p>
+<p>380종의 원단 샘플을 들고 방문해<br>실제 창 앞에서 빛을 비춰 보며 고를 수 있습니다.</p>
 <table class="spec"><tr><th>봉제</th><td>자체 봉제실 (경기 고양)</td></tr><tr><th>원단 샘플</th><td>380종</td></tr><tr><th>실측 단위</th><td>mm</td></tr></table>
 </div>
 </div>
