@@ -63,13 +63,28 @@ h1,h2,h3{text-wrap:balance;margin:0}
 .burger i:nth-child(1){top:14px}.burger i:nth-child(2){top:24px}
 .burger[aria-expanded="true"] i:nth-child(1){top:19px;transform:rotate(45deg)}
 .burger[aria-expanded="true"] i:nth-child(2){top:19px;transform:rotate(-45deg)}
+em.m{font-style:normal}
 @media(max-width:900px){
-.burger{display:block}
-.nav{position:fixed;top:calc(76px + env(safe-area-inset-top,0px));left:0;right:0;bottom:0;background:var(--paper);flex-direction:column;align-items:stretch;gap:0;padding:12px var(--gutr) 24px var(--gut);transform:translateX(100%);transition:transform .3s;visibility:hidden}
-.nav.open{transform:none;visibility:visible}
-.nav a{font-size:22px;padding:18px 0;border-bottom:1px solid var(--line)}
-.nav a.on::after{display:none}
-.nav .cta{margin-top:24px;text-align:center;padding:18px}
+.hd .wrap{height:60px;gap:14px}
+.logo{gap:8px;flex:none}
+.logo-mark{width:26px;height:26px}
+.logo b{font-size:17px}
+.logo small{display:none}
+.nav{gap:14px;overflow-x:auto;scrollbar-width:none;min-width:0}
+.nav::-webkit-scrollbar{display:none}
+.nav a{font-size:14px;white-space:nowrap;flex:none}
+.nav a span{display:none}
+.nav a.on::after{bottom:0}
+.nav .cta{padding:8px 12px;font-size:13px}
+.tabs{top:calc(60px + env(safe-area-inset-top,0px))}
+.tabs a{padding:14px 12px}
+}
+@media(max-width:430px){
+.logo b{display:none}
+.nav{gap:12px}
+.nav a{font-size:13.5px}
+.nav .cta{padding:7px 10px}
+em.m{display:none}
 }
 /* views */
 .view{display:none}
@@ -238,7 +253,7 @@ fieldset{border:0;margin:0;padding:0}
 <a href="#curtain" data-v="curtain"><span>CURTAIN</span>커튼</a>
 <a href="#blind" data-v="blind"><span>BLIND</span>블라인드</a>
 <a href="#gallery" data-v="gallery"><span>GALLERY</span>시공갤러리</a>
-<a href="#estimate" data-v="estimate" class="cta"><span>FREE VISIT</span>무료 방문견적</a>
+<a href="#estimate" data-v="estimate" class="cta"><span>FREE VISIT</span><em class="m">무료 </em>방문견적</a>
 </nav>
 </div>
 </header>
