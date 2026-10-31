@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>결 커튼앤블라인드 | 맞춤 커튼 · 블라인드 시공</title>
+<meta name="description" content="창의 크기를 재고 빛의 방향을 읽어 맞춤 제작하는 커튼 · 블라인드 브랜드, 결(GYEOL). 무료 방문 실측과 견적.">
+<meta property="og:title" content="결 커튼앤블라인드">
+<meta property="og:description" content="맞춤 커튼 · 블라인드 제작과 시공. 무료 방문견적.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1771039621944-4cce4691774a?w=1200&h=630&fit=crop&q=75">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap">
+<style>
+/* Layout: 화이트 갤러리형 — 풀블리드 사진 슬라이드 히어로, 넓은 여백의 정방형 사진 그리드, 좌측 로고 / 우측 메뉴 고정 헤더 */
+:root{
+--paper:#ffffff;
+--mist:#f3f4f5;
+--line:#e2e4e7;
+--ink:#141516;
+--sub:#5d6166;
+--signal:#c4122f;
+--en:"Outfit","Noto Sans KR",system-ui,sans-serif;
+--kr:"Noto Sans KR","Apple SD Gothic Neo",system-ui,sans-serif;
+--gut:max(16px, env(safe-area-inset-left,0px));
+--gutr:max(16px, env(safe-area-inset-right,0px));
+color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--kr);font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased;word-break:keep-all}
+img{max-width:100%;display:block}
+[hidden]{display:none!important}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--signal);outline-offset:3px}
+.wrap{max-width:1240px;margin:0 auto;padding-left:var(--gut);padding-right:var(--gutr)}
+h1,h2,h3{text-wrap:balance;margin:0}
+.eyebrow{font-family:var(--en);font-weight:500;font-size:13px;letter-spacing:.06em;color:var(--signal)}
+.en{font-family:var(--en)}
+/* photo frame */
+.ph{position:relative;overflow:hidden;background:var(--mist);aspect-ratio:1/1;max-width:100%}
+.ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1),opacity .6s;opacity:0}
+.ph img.ok{opacity:1}
+/* header */
+.hd{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hd .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-mark{width:34px;height:34px;display:grid;grid-template-columns:repeat(5,1fr);gap:2px}
+.logo-mark i{background:var(--ink);display:block}
+.logo-mark i:nth-child(2){opacity:.7}.logo-mark i:nth-child(3){opacity:.45}.logo-mark i:nth-child(4){opacity:.25}.logo-mark i:nth-child(5){background:var(--signal)}
+.logo b{font-family:var(--en);font-weight:600;font-size:22px;letter-spacing:.14em;line-height:1}
+.logo small{display:block;font-size:11px;color:var(--sub);letter-spacing:.02em;margin-top:3px;font-weight:400}
+.nav{display:flex;align-items:center;gap:34px}
+.nav a{font-size:15px;font-weight:500;position:relative;padding:6px 0}
+.nav a span{display:block;font-family:var(--en);font-size:10px;letter-spacing:.12em;color:var(--sub);font-weight:400;line-height:1;margin-bottom:3px}
+.nav a.on::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--ink)}
+.nav .cta{background:var(--ink);color:#fff;padding:12px 20px;font-size:14px}
+.nav .cta span{color:#9aa0a6}
+.nav .cta.on::after{display:none}
+.burger{display:none;width:40px;height:40px;position:relative}
+.burger i{position:absolute;left:8px;right:8px;height:2px;background:var(--ink);transition:.25s}
+.burger i:nth-child(1){top:14px}.burger i:nth-child(2){top:24px}
+.burger[aria-expanded="true"] i:nth-child(1){top:19px;transform:rotate(45deg)}
+.burger[aria-expanded="true"] i:nth-child(2){top:19px;transform:rotate(-45deg)}
+@media(max-width:900px){
+.burger{display:block}
+.nav{position:fixed;top:calc(76px + env(safe-area-inset-top,0px));left:0;right:0;bottom:0;background:var(--paper);flex-direction:column;align-items:stretch;gap:0;padding:12px var(--gutr) 24px var(--gut);transform:translateX(100%);transition:transform .3s;visibility:hidden}
+.nav.open{transform:none;visibility:visible}
+.nav a{font-size:22px;padding:18px 0;border-bottom:1px solid var(--line)}
+.nav a.on::after{display:none}
+.nav .cta{margin-top:24px;text-align:center;padding:18px}
+}
+/* views */
+.view{display:none}
+.view.on{display:block;animation:rise .5s ease}
+@keyframes rise{from{opacity:.4;transform:translateY(8px)}to{opacity:1;transform:none}}
+/* hero slider */
+.hero{position:relative;height:clamp(480px,78vh,780px);overflow:hidden;background:#2a2c2e;color:#fff}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease}
+.slide.on{opacity:1}
+.slide img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05) brightness(.82);transform:scale(1.06);transition:transform 7s linear}
+.slide.on img{transform:scale(1)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,.05) 40%,rgba(0,0,0,.45))}
+.hero .copy{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:18px;padding-left:var(--gut);padding-right:var(--gutr)}
+.hero .copy > div{display:none;flex-direction:column;align-items:center;gap:18px}
+.hero .copy > div.on{display:flex;animation:rise .9s ease}
+.hero h1,.hero h2{font-family:var(--en);font-weight:600;font-size:clamp(40px,7vw,88px);line-height:1.02;letter-spacing:-.01em;text-transform:uppercase}
+.hero p{margin:0;color:rgba(255,255,255,.85);font-size:clamp(15px,1.6vw,18px)}
+.hero .since{font-family:var(--en);font-size:clamp(17px,2vw,22px);font-weight:500;color:#fff}
+.ctrl{position:absolute;z-index:3;bottom:34px;left:0;right:0;display:flex;justify-content:center;align-items:center;gap:22px;font-family:var(--en);font-size:14px}
+.ctrl button{color:rgba(255,255,255,.55);padding:6px 8px}
+.ctrl button.on{color:#fff;border-bottom:1px solid #fff}
+.ctrl .arr{color:#fff;font-size:18px}
+/* sections */
+.sec{padding-block:clamp(72px,10vw,130px)}
+.sec-hd{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;margin-bottom:clamp(40px,6vw,70px)}
+.sec-hd h2{font-family:var(--en);font-weight:600;font-size:clamp(30px,4.4vw,52px);line-height:1.1}
+.sec-hd p{margin:0;color:var(--sub);max-width:560px}
+.mist{background:var(--mist)}
+/* collection split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,40px)}
+.coll{display:flex;flex-direction:column;gap:22px}
+.coll .ph{aspect-ratio:4/5}
+.coll:hover .ph img,.item:hover .ph img,.case:hover .ph img{transform:scale(1.04)}
+.coll-meta{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;border-top:1px solid var(--ink);padding-top:16px}
+.coll-meta h3{font-family:var(--en);font-weight:600;font-size:clamp(24px,3vw,34px);line-height:1.1}
+.coll-meta h3 small{display:block;font-family:var(--kr);font-size:14px;font-weight:400;color:var(--sub);margin-top:6px}
+.coll-meta .go{font-family:var(--en);font-size:13px;letter-spacing:.06em;white-space:nowrap}
+@media(max-width:700px){.split{grid-template-columns:1fr}}
+/* product grid */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2.4vw,32px)}
+.item{display:flex;flex-direction:column;gap:16px;text-align:center}
+.item h3{font-family:var(--en);font-weight:500;font-size:18px}
+.item p{margin:-10px 0 0;font-size:13px;color:var(--sub)}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+/* about band with image */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,80px);align-items:center}
+.about .ph{aspect-ratio:4/5}
+.about .txt{display:flex;flex-direction:column;gap:18px}
+.about h2{font-size:clamp(26px,3.2vw,38px);font-weight:700;line-height:1.35}
+.about p{margin:0;color:var(--sub);max-width:460px}
+@media(max-width:800px){.about{grid-template-columns:1fr}}
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink)}
+.step{padding:26px 22px 8px 0;display:flex;flex-direction:column;gap:8px;min-width:0}
+.step + .step{padding-left:22px;border-left:1px solid var(--line)}
+.step .n{font-family:var(--en);font-size:13px;color:var(--signal);font-weight:500}
+.step h3{font-size:19px;font-weight:700}
+.step p{margin:0;color:var(--sub);font-size:14px}
+@media(max-width:800px){.steps{grid-template-columns:1fr 1fr}.step:nth-child(3){padding-left:0;border-left:0}.step{border-top:1px solid var(--line)}}
+.figs{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center;margin-top:clamp(56px,7vw,90px)}
+.figs b{display:block;font-family:var(--en);font-weight:500;font-size:clamp(36px,5vw,58px);line-height:1;font-variant-numeric:tabular-nums}
+.figs span{font-size:14px;color:var(--sub)}
+/* cta band */
+.band{position:relative;color:#fff;overflow:hidden;background:var(--ink)}
+.band .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) brightness(.35)}
+.band .wrap{position:relative;padding-block:clamp(70px,9vw,110px);display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap}
+.band h2{font-family:var(--en);font-weight:500;font-size:clamp(26px,3.6vw,42px);line-height:1.2}
+.band h2 small{display:block;font-family:var(--kr);font-size:15px;color:#c3c8cd;font-weight:400;margin-top:10px}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:16px 28px;font-weight:500;border:1px solid currentColor;transition:.25s}
+.btn.light{background:#fff;color:var(--ink);border-color:#fff}
+.btn.light:hover{background:transparent;color:#fff}
+.btn.dark{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn.dark:hover{background:#fff;color:var(--ink)}
+/* sub page head */
+.phd{position:relative;height:clamp(260px,38vh,380px);overflow:hidden;color:#fff;background:#2a2c2e}
+.phd img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) brightness(.6)}
+.phd .wrap{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:10px}
+.phd .eyebrow{color:#fff;opacity:.8}
+.phd h1{font-family:var(--en);font-weight:600;font-size:clamp(40px,6vw,72px);line-height:1;text-transform:uppercase}
+.phd p{margin:0;color:rgba(255,255,255,.85)}
+.tabs{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;border-bottom:1px solid var(--line);position:sticky;top:calc(76px + env(safe-area-inset-top,0px));background:rgba(255,255,255,.96);z-index:40;padding-left:var(--gut);padding-right:var(--gutr)}
+.tabs a{padding:16px 18px;font-size:15px;color:var(--sub);border-bottom:2px solid transparent;margin-bottom:-1px}
+.tabs a:hover,.tabs a.on{color:var(--ink);border-color:var(--ink)}
+/* product detail rows */
+.prod{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(28px,5vw,80px);align-items:center;padding-block:clamp(56px,8vw,100px);border-bottom:1px solid var(--line);scroll-margin-top:150px}
+.prod:nth-of-type(even) .media{order:2}
+.prod .media{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:10px;aspect-ratio:3/2}
+.prod .media .ph{aspect-ratio:auto;height:100%}
+.prod .media .ph:first-child{grid-row:span 2}
+.prod .txt{display:flex;flex-direction:column;gap:18px;min-width:0}
+.prod h2{font-size:clamp(28px,3.4vw,40px);font-weight:700;line-height:1.2}
+.prod h2 .en{display:block;font-size:14px;font-weight:500;color:var(--signal);letter-spacing:.04em;margin-bottom:10px}
+.prod .lead{margin:0;color:var(--sub);max-width:480px}
+.checks{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.checks li{display:flex;gap:12px;align-items:baseline;font-size:15px}
+.checks li::before{content:"";width:12px;height:1px;background:var(--ink);flex:none;transform:translateY(-4px)}
+.spec{width:100%;border-collapse:collapse;font-size:14px;margin-top:6px}
+.spec th,.spec td{text-align:left;padding:11px 0;border-top:1px solid var(--line);vertical-align:top}
+.spec th{width:34%;color:var(--sub);font-weight:400}
+.spec td{font-variant-numeric:tabular-nums}
+@media(max-width:820px){.prod{grid-template-columns:1fr}.prod:nth-of-type(even) .media{order:0}}
+/* gallery */
+.filters{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:40px}
+.filters button{padding:9px 18px;border:1px solid var(--line);font-size:14px;color:var(--sub)}
+.filters button.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,28px)}
+.case{display:flex;flex-direction:column;gap:14px;margin:0}
+.case .ph{aspect-ratio:4/3}
+.case-meta{display:flex;justify-content:space-between;gap:12px;font-size:14px;border-bottom:1px solid var(--line);padding-bottom:12px}
+.case-meta b{font-weight:500}
+.case-meta span{color:var(--sub);text-align:right}
+@media(max-width:900px){.gal{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.gal{grid-template-columns:1fr}}
+/* estimate */
+.est{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(32px,6vw,90px);align-items:start}
+.est aside{display:flex;flex-direction:column;gap:22px;position:sticky;top:110px}
+.est aside .ph{aspect-ratio:3/2}
+.est aside h2{font-size:clamp(26px,3vw,34px);font-weight:700;line-height:1.3}
+.est aside p{margin:0;color:var(--sub)}
+.contact{border-top:1px solid var(--ink);display:grid;margin:0}
+.contact div{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:14px}
+.contact dt{color:var(--sub)}
+.contact dd{margin:0;font-weight:500;text-align:right}
+form{display:grid;gap:26px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.f{display:flex;flex-direction:column;gap:8px;min-width:0}
+.f label,.f legend{font-size:14px;font-weight:500}
+.f label em{color:var(--signal);font-style:normal}
+.f input,.f select,.f textarea{font:inherit;color:var(--ink);background:#fff;border:0;border-bottom:1px solid #b9bdc2;padding:12px 2px;border-radius:0;width:100%}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-bottom-color:var(--ink)}
+.f textarea{min-height:110px;resize:vertical;border:1px solid #b9bdc2;padding:12px}
+fieldset{border:0;margin:0;padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.chips label{font-weight:400;position:relative}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips span{display:inline-block;padding:9px 16px;border:1px solid var(--line);font-size:14px;cursor:pointer;transition:.2s}
+.chips input:checked + span{background:var(--ink);color:#fff;border-color:var(--ink)}
+.chips input:focus-visible + span{outline:2px solid var(--signal);outline-offset:2px}
+.agree{display:flex;gap:10px;align-items:center;font-size:14px;color:var(--sub)}
+.err{color:var(--signal);font-size:13px;min-height:1em;margin:0}
+.done{border:1px solid var(--ink);padding:36px;display:flex;flex-direction:column;gap:12px}
+.done h3{font-size:22px}
+.done p{margin:0;color:var(--sub)}
+@media(max-width:820px){.est{grid-template-columns:1fr}.est aside{position:static}.row{grid-template-columns:1fr}}
+/* footer */
+.ft{border-top:1px solid var(--line);font-size:13px;color:var(--sub)}
+.ft .wrap{padding-block:48px;display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.ft .logo b{color:var(--ink)}
+.ft address{font-style:normal;display:grid;gap:4px;margin-top:18px}
+.ft nav{display:flex;gap:20px;align-items:flex-start}
+.ft nav a:hover{color:var(--ink)}
+.copy{font-family:var(--en);margin-top:18px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="hd">
+<div class="wrap">
+<a href="#home" class="logo" aria-label="결 커튼앤블라인드 홈">
+<span class="logo-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+<span><b>GYEOL</b><small>결 커튼앤블라인드</small></span>
+</a>
+<button class="burger" id="burger" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav"><i></i><i></i></button>
+<nav class="nav" id="nav">
+<a href="#home" data-v="home"><span>MAIN</span>메인</a>
+<a href="#curtain" data-v="curtain"><span>CURTAIN</span>커튼</a>
+<a href="#blind" data-v="blind"><span>BLIND</span>블라인드</a>
+<a href="#gallery" data-v="gallery"><span>GALLERY</span>시공갤러리</a>
+<a href="#estimate" data-v="estimate" class="cta"><span>FREE VISIT</span>무료 방문견적</a>
+</nav>
+</div>
+</header>
+<main>
+<!-- ============ HOME ============ -->
+<section class="view" id="v-home">
+<div class="hero" id="hero">
+<div class="slide on"><img data-u="1623658423238-8307df454e11" data-w="2000" alt="커튼 사이로 들어온 빛이 바닥에 떨어진 모습"></div>
+<div class="slide"><img data-u="1754611362309-71297e9f42fd" data-w="2000" alt="회색 커튼을 단 넓은 거실"></div>
+<div class="copy">
+<div class="on">
+<h1>Woven<br>for Light</h1>
+<p class="since">Measured, sewn and hung by hand.</p>
+<p>창의 크기를 재고, 빛의 방향을 읽고, 원단을 고릅니다.<br>결은 한 집의 창 하나하나를 맞춤으로 완성합니다.</p>
+</div>
+<div>
+<h2>Every Window<br>Fitted</h2>
+<p class="since">From sheer to blackout.</p>
+<p>속지 한 장부터 거실 전체 암막까지,<br>mm 단위 실측으로 맞춰 제작합니다.</p>
+</div>
+</div>
+<div class="ctrl" role="group" aria-label="슬라이드 이동">
+<button class="arr" data-s="prev" aria-label="이전 슬라이드">←</button>
+<button class="on" data-s="0">1</button>
+<button data-s="1">2</button>
+<button class="arr" data-s="next" aria-label="다음 슬라이드">→</button>
+</div>
+</div>
+<div class="sec">
+<div class="wrap">
+<div class="sec-hd">
+<span class="eyebrow">Collection</span>
+<h2>Curtain &amp; Blind</h2>
+<p>공간의 용도와 채광에 맞춰 두 가지 라인을 제안합니다.</p>
+</div>
+<div class="split">
+<a class="coll" href="#curtain">
+<div class="ph"><img data-u="1771039621944-4cce4691774a" data-w="1000" alt="창문을 덮은 회색 커튼"></div>
+<div class="coll-meta"><h3>Curtain<small>속지 · 겉지 · 자수 · 방염</small></h3><span class="go en">VIEW →</span></div>
+</a>
+<a class="coll" href="#blind">
+<div class="ph"><img data-u="1587812226208-37081e8c0ede" data-w="1000" alt="햇빛이 드는 흰색 블라인드"></div>
+<div class="coll-meta"><h3>Blind<small>콤비 · 우드 · 허니콤 · 롤 · 버티컬</small></h3><span class="go en">VIEW →</span></div>
+</a>
+</div>
+</div>
+</div>
+<div class="sec mist">
+<div class="wrap">
+<div class="sec-hd">
+<span class="eyebrow">Fabrics</span>
+<h2>For Curtains</h2>
+</div>
+<div class="grid">
+<a class="item" href="#curtain"><div class="ph"><img data-u="1530914507926-36d0f98a9f1f" data-w="600" alt="철제 봉에 걸린 흰색 속지 커튼"></div><h3>Sheer</h3><p>쉬폰 · 보일 속지</p></a>
+<a class="item" href="#curtain"><div class="ph"><img data-u="1674951780257-58bb3b7038e5" data-w="600" alt="검은 암막 커튼과 흰 커튼"></div><h3>Woven Blackout</h3><p>암막 겉지</p></a>
+<a class="item" href="#curtain"><div class="ph"><img data-u="1539208175673-6b9149754096" data-w="600" alt="닫힌 회색 커튼의 주름"></div><h3>Dimout</h3><p>부분 차광 겉지</p></a>
+<a class="item" href="#curtain"><div class="ph"><img data-u="1682421938316-4b186e25174c" data-w="600" alt="린넨 커튼에 비친 식물 그림자"></div><h3>Linen</h3><p>린넨 블렌드</p></a>
+</div>
+</div>
+</div>
+<div class="sec">
+<div class="wrap about">
+<div class="ph"><img data-u="1707978932202-751b08324daf" data-w="1000" alt="오래된 직조기의 실"></div>
+<div class="txt">
+<span class="eyebrow">About GYEOL</span>
+<h2>원단의 결을 알고,<br>창의 결에 맞춥니다</h2>
+<p>결은 원단을 직접 고르고 자체 봉제실에서 재단합니다. 기성 사이즈를 줄여 쓰지 않고, 실측한 창 크기에 맞춰 주름 배수와 기장을 처음부터 정해 만듭니다.</p>
+<p>380종의 원단 샘플을 들고 방문해 실제 창 앞에서 빛을 비춰 보며 고를 수 있습니다.</p>
+</div>
+</div>
+</div>
+<div class="sec mist">
+<div class="wrap">
+<div class="sec-hd">
+<span class="eyebrow">Process</span>
+<h2>From Window to Fold</h2>
+<p>상담부터 시공까지 같은 담당자가 끝까지 책임집니다.</p>
+</div>
+<div class="steps">
+<div class="step"><span class="n">STEP 1</span><h3>상담 예약</h3><p>전화나 견적 신청서로 원하는 일정과 공간을 알려주세요.</p></div>
+<div class="step"><span class="n">STEP 2</span><h3>방문 실측</h3><p>원단 샘플북을 들고 방문해 창 크기와 레일 위치를 mm 단위로 잽니다.</p></div>
+<div class="step"><span class="n">STEP 3</span><h3>맞춤 제작</h3><p>주름 배수와 기장을 정해 자체 봉제실에서 7~10일간 제작합니다.</p></div>
+<div class="step"><span class="n">STEP 4</span><h3>설치 · A/S</h3><p>레일 시공과 주름 정리까지 마치고, 1년간 무상 점검합니다.</p></div>
+</div>
+<div class="figs">
+<div><b>2,400+</b><span>누적 시공 세대</span></div>
+<div><b>380</b><span>보유 원단 종류</span></div>
+<div><b>1년</b><span>무상 A/S</span></div>
+</div>
+</div>
+</div>
+<div class="sec">
+<div class="wrap">
+<div class="sec-hd">
+<span class="eyebrow">Gallery</span>
+<h2>Recent Installations</h2>
+</div>
+<div class="gal" id="homeGal"></div>
+<div style="text-align:center;margin-top:48px"><a class="btn dark" href="#gallery">시공갤러리 전체 보기 <span class="en">→</span></a></div>
+</div>
+</div>
+</section>
+<!-- ============ CURTAIN ============ -->
+<section class="view" id="v-curtain">
+<div class="phd"><img data-u="1771039622303-71545f266c1b" data-w="2000" alt=""><div class="wrap"><span class="eyebrow">Curtain</span><h1>Curtain</h1><p>빛을 거르는 정도에 따라 네 가지 원단 라인을 운영합니다.</p></div></div>
+<nav class="tabs" aria-label="커튼 종류">
+<a href="#curtain" data-jump="c-sheer">속지</a><a href="#curtain" data-jump="c-drape">겉지</a><a href="#curtain" data-jump="c-emb">자수</a><a href="#curtain" data-jump="c-fr">방염</a>
+</nav>
+<div class="wrap">
+<article class="prod" id="c-sheer">
+<div class="media">
+<div class="ph"><img data-u="1573507811472-909cd17e834d" data-w="1000" alt="흰색 속지 커튼"></div>
+<div class="ph"><img data-u="1688732324812-9c67f0a35b4b" data-w="500" alt="창틀 앞의 얇은 커튼"></div>
+<div class="ph"><img data-u="1680457484255-67719e11b51d" data-w="500" alt="속지 커튼 클로즈업"></div>
+</div>
+<div class="txt">
+<h2><span class="en">Sheer curtain</span>속지 커튼</h2>
+<p class="lead">낮 동안 자연광을 부드럽게 들이면서 바깥 시선은 가려줍니다. 겉지와 이중 레일로 겹쳐 쓰는 경우가 가장 많습니다.</p>
+<ul class="checks"><li>쉬폰 · 보일 · 린넨 3가지 소재</li><li>가정용 세탁기 울코스 세탁 가능</li><li>겉지와 레이어드 시공</li></ul>
+<table class="spec"><tr><th>원단 폭</th><td>280cm (이음매 없는 통원단)</td></tr><tr><th>권장 주름 배수</th><td>2.0배</td></tr><tr><th>투광률</th><td>약 60~75%</td></tr></table>
+</div>
+</article>
+<article class="prod" id="c-drape">
+<div class="media">
+<div class="ph"><img data-u="1771039621944-4cce4691774a" data-w="1000" alt="창을 가린 회색 겉지 커튼"></div>
+<div class="ph"><img data-u="1539208175673-6b9149754096" data-w="500" alt="회색 커튼 주름"></div>
+<div class="ph"><img data-u="1674951780257-58bb3b7038e5" data-w="500" alt="검은 암막 커튼"></div>
+</div>
+<div class="txt">
+<h2><span class="en">Drapery curtain</span>겉지 커튼</h2>
+<p class="lead">침실과 거실에 쓰는 무게감 있는 원단입니다. 암막은 빛을 거의 차단하고, 딤아웃은 은은하게 어둡게 만듭니다.</p>
+<ul class="checks"><li>암막 · 딤아웃 · 벨벳 · 자카드</li><li>겨울철 창가 냉기를 줄이는 단열 효과</li><li>평주름 · 나비주름 · 아일렛 선택</li></ul>
+<table class="spec"><tr><th>차광률</th><td>암막 99% / 딤아웃 70~85%</td></tr><tr><th>권장 주름 배수</th><td>1.5~2.0배</td></tr><tr><th>컬러</th><td>42가지</td></tr></table>
+</div>
+</article>
+<article class="prod" id="c-emb">
+<div class="media">
+<div class="ph"><img data-u="1621423673985-55010b372463" data-w="1000" alt="결이 살아있는 원단 클로즈업"></div>
+<div class="ph"><img data-u="1705493253575-e911888621ff" data-w="500" alt="회색과 남색 원단"></div>
+<div class="ph"><img data-u="1682421938316-4b186e25174c" data-w="500" alt="린넨 커튼"></div>
+</div>
+<div class="txt">
+<h2><span class="en">Embroidered curtain</span>자수 커튼</h2>
+<p class="lead">원단 위에 실로 패턴을 수놓아 가까이서 볼 때 질감이 살아납니다. 패턴 크기와 실 색상을 주문 시 정할 수 있습니다.</p>
+<ul class="checks"><li>도트 · 플라워 · 기하학 패턴</li><li>속지 · 겉지 모두 적용 가능</li><li>주문 후 14일 내외 제작</li></ul>
+<table class="spec"><tr><th>자수 밀도</th><td>표준 / 고밀도 2단계</td></tr><tr><th>권장 주름 배수</th><td>1.8배</td></tr><tr><th>세탁</th><td>드라이클리닝 권장</td></tr></table>
+</div>
+</article>
+<article class="prod" id="c-fr">
+<div class="media">
+<div class="ph"><img data-u="1754611380518-61a923cc47ca" data-w="1000" alt="밝은 공간의 유리창을 감싼 커튼"></div>
+<div class="ph"><img data-u="1704040686510-b747ff423ebb" data-w="500" alt="큰 창이 있는 공간"></div>
+<div class="ph"><img data-u="1633655442330-0b44ca0cce9b" data-w="500" alt="원단 샘플"></div>
+</div>
+<div class="txt">
+<h2><span class="en">Fire-retardant curtain</span>방염 커튼</h2>
+<p class="lead">학원 · 병원 · 사무실 · 숙박시설처럼 방염 물품 사용이 의무인 공간을 위한 라인입니다. 방염 필증을 함께 발급합니다.</p>
+<ul class="checks"><li>소방청 방염성능 기준 통과 원단</li><li>방염 필증 발급</li><li>속지 · 암막 모두 방염 가능</li></ul>
+<table class="spec"><tr><th>대상 공간</th><td>다중이용업소 · 의료시설 · 교육시설</td></tr><tr><th>서류</th><td>방염 성능검사 필증</td></tr><tr><th>시공</th><td>야간 · 주말 시공 협의 가능</td></tr></table>
+</div>
+</article>
+</div>
+<div class="sec"></div>
+</section>
+<!-- ============ BLIND ============ -->
+<section class="view" id="v-blind">
+<div class="phd"><img data-u="1582265214834-c02ec775947b" data-w="2000" alt=""><div class="wrap"><span class="eyebrow">Blind</span><h1>Blind</h1><p>창틀 안쪽에 깔끔하게 들어가는 블라인드 다섯 가지.</p></div></div>
+<nav class="tabs" aria-label="블라인드 종류">
+<a href="#blind" data-jump="b-combi">콤비</a><a href="#blind" data-jump="b-wood">우드</a><a href="#blind" data-jump="b-honey">허니콤</a><a href="#blind" data-jump="b-roll">롤</a><a href="#blind" data-jump="b-vert">버티컬</a>
+</nav>
+<div class="wrap">
+<article class="prod" id="b-combi">
+<div class="media">
+<div class="ph"><img data-u="1779894015350-c5486bf8f618" data-w="1000" alt="흰색 블라인드가 달린 밝은 창"></div>
+<div class="ph"><img data-u="1609423433459-a65b330ef5da" data-w="500" alt="줄무늬 블라인드"></div>
+<div class="ph"><img data-u="1603299938527-d035bc6fc2c8" data-w="500" alt="창문의 흰색 블라인드"></div>
+</div>
+<div class="txt"><h2><span class="en">Combi blind</span>콤비 블라인드</h2>
+<p class="lead">원단 띠와 망사 띠가 번갈아 있어 줄 하나로 채광을 조절합니다. 아파트 거실 창에서 가장 많이 찾는 제품입니다.</p>
+<ul class="checks"><li>원단 띠 / 망사 띠 교차 구조</li><li>암막 콤비 옵션</li><li>전동 모터 추가 가능</li></ul>
+<table class="spec"><tr><th>최대 폭</th><td>300cm</td></tr><tr><th>조작</th><td>체인 / 전동</td></tr></table></div>
+</article>
+<article class="prod" id="b-wood">
+<div class="media">
+<div class="ph"><img data-u="1622605058034-5cbf25d135de" data-w="1000" alt="갈색 우드 블라인드"></div>
+<div class="ph"><img data-u="1496522921967-21f118bec0e5" data-w="500" alt="닫힌 우드 블라인드"></div>
+<div class="ph"><img data-u="1582265214834-c02ec775947b" data-w="500" alt="햇빛이 드는 나무 블라인드"></div>
+</div>
+<div class="txt"><h2><span class="en">Wood blind</span>우드 블라인드</h2>
+<p class="lead">원목 슬랫의 각도를 돌려 빛의 방향을 바꿉니다. 서재와 카페처럼 나무 마감이 있는 공간과 잘 어울립니다.</p>
+<ul class="checks"><li>오동 · 바스우드 원목</li><li>슬랫 폭 35mm / 50mm</li><li>사다리끈 · 테이프 선택</li></ul>
+<table class="spec"><tr><th>최대 폭</th><td>240cm</td></tr><tr><th>마감</th><td>내추럴 · 월넛 · 화이트 · 차콜</td></tr></table></div>
+</article>
+<article class="prod" id="b-honey">
+<div class="media">
+<div class="ph"><img data-u="1518002903142-1f4ef6851390" data-w="1000" alt="식물 옆의 닫힌 흰색 블라인드"></div>
+<div class="ph"><img data-u="1641481001093-592dd889b1af" data-w="500" alt="블라인드 클로즈업"></div>
+<div class="ph"><img data-u="1523181349018-de4228d5e009" data-w="500" alt="벽에 드리운 블라인드 그림자"></div>
+</div>
+<div class="txt"><h2><span class="en">Honeycomb blind</span>허니콤 블라인드</h2>
+<p class="lead">벌집 모양 공기층이 창가의 열 손실을 줄입니다. 위아래 양방향으로 열 수 있어 상단 채광만 남길 수 있습니다.</p>
+<ul class="checks"><li>단열 공기층 구조</li><li>탑다운 · 바텀업 양방향</li><li>무줄 코드리스 옵션</li></ul>
+<table class="spec"><tr><th>셀 크기</th><td>25mm / 38mm</td></tr><tr><th>원단</th><td>투광 · 암막</td></tr></table></div>
+</article>
+<article class="prod" id="b-roll">
+<div class="media">
+<div class="ph"><img data-u="1758315417320-a8bbed64d29b" data-w="1000" alt="밝은 홈 오피스 창"></div>
+<div class="ph"><img data-u="1711006295130-406e8e9057f2" data-w="500" alt="창문 블라인드 클로즈업"></div>
+<div class="ph"><img data-u="1520046345720-d62f2019926b" data-w="500" alt="흑백의 블라인드 창"></div>
+</div>
+<div class="txt"><h2><span class="en">Roll screen</span>롤 스크린</h2>
+<p class="lead">한 장의 원단을 위로 말아 올리는 가장 단순한 구조입니다. 사무실과 주방 창처럼 관리가 쉬워야 하는 곳에 씁니다.</p>
+<ul class="checks"><li>암막 · 선스크린 · 방염 원단</li><li>오염에 강한 코팅 원단</li><li>전동 · 무선 리모컨 옵션</li></ul>
+<table class="spec"><tr><th>최대 폭</th><td>300cm</td></tr><tr><th>개방률</th><td>선스크린 3% / 5%</td></tr></table></div>
+</article>
+<article class="prod" id="b-vert">
+<div class="media">
+<div class="ph"><img data-u="1713370389454-f3adbac10520" data-w="1000" alt="세로 루버 블라인드"></div>
+<div class="ph"><img data-u="1527030126234-095ace44080f" data-w="500" alt="흰색 블라인드"></div>
+<div class="ph"><img data-u="1609534117141-ff9f20450902" data-w="500" alt="블라인드 옆 화분"></div>
+</div>
+<div class="txt"><h2><span class="en">Vertical blind</span>버티컬 블라인드</h2>
+<p class="lead">세로로 걸린 루버가 좌우로 열립니다. 베란다 확장 창이나 층고가 높은 통창에 적합합니다.</p>
+<ul class="checks"><li>루버 폭 89mm</li><li>좌 · 우 · 양개 개폐</li><li>천장 · 벽면 매립 시공</li></ul>
+<table class="spec"><tr><th>최대 높이</th><td>400cm</td></tr><tr><th>원단</th><td>투광 · 암막 · 방염</td></tr></table></div>
+</article>
+</div>
+<div class="sec"></div>
+</section>
+<!-- ============ GALLERY ============ -->
+<section class="view" id="v-gallery">
+<div class="phd"><img data-u="1704789202340-85a4786aa2c0" data-w="2000" alt=""><div class="wrap"><span class="eyebrow">Gallery</span><h1>Gallery</h1><p>최근 시공한 현장을 공간별로 모았습니다.</p></div></div>
+<div class="wrap sec">
+<div class="filters" role="group" aria-label="시공 종류 필터">
+<button class="on" data-f="all">전체</button><button data-f="curtain">커튼</button><button data-f="blind">블라인드</button><button data-f="biz">상업공간</button>
+</div>
+<div class="gal" id="fullGal"></div>
+</div>
+</section>
+<!-- ============ ESTIMATE ============ -->
+<section class="view" id="v-estimate">
+<div class="phd"><img data-u="1633655442330-0b44ca0cce9b" data-w="2000" alt=""><div class="wrap"><span class="eyebrow">Free visit</span><h1>Estimate</h1><p>샘플북을 들고 직접 방문해 실측하고 견적을 드립니다. 방문 비용은 없습니다.</p></div></div>
+<div class="wrap sec">
+<div class="est">
+<aside>
+<div class="ph"><img data-u="1781888699751-15f2b304693c" data-w="900" alt="원단 샘플북에서 원단을 고르는 손"></div>
+<h2>견적은 실측부터<br>시작합니다</h2>
+<p>같은 30평대 아파트도 창 크기는 집마다 다릅니다. 정확한 금액은 방문 실측 후 현장에서 바로 안내합니다.</p>
+<dl class="contact">
+<div><dt>대표 전화</dt><dd>1600-0000</dd></div>
+<div><dt>상담 시간</dt><dd>평일 09:00–19:00 · 토 10:00–16:00</dd></div>
+<div><dt>방문 지역</dt><dd>서울 · 경기 전 지역</dd></div>
+</dl>
+</aside>
+<div id="formBox">
+<form id="estForm" novalidate>
+<div class="row">
+<div class="f"><label for="nm">이름 <em>*</em></label><input id="nm" name="nm" autocomplete="name" placeholder="홍길동"></div>
+<div class="f"><label for="ph">연락처 <em>*</em></label><input id="ph" name="ph" inputmode="tel" autocomplete="tel" placeholder="010-0000-0000"></div>
+</div>
+<div class="f"><label for="ad">시공 주소</label><input id="ad" name="ad" placeholder="예) 고양시 일산동구 ○○아파트"></div>
+<fieldset class="f"><legend>관심 제품 (복수 선택)</legend>
+<div class="chips">
+<label><input type="checkbox" id="p1" name="p" value="속지"><span>속지 커튼</span></label>
+<label><input type="checkbox" id="p2" name="p" value="겉지"><span>겉지 · 암막</span></label>
+<label><input type="checkbox" id="p3" name="p" value="콤비"><span>콤비</span></label>
+<label><input type="checkbox" id="p4" name="p" value="우드"><span>우드</span></label>
+<label><input type="checkbox" id="p5" name="p" value="허니콤"><span>허니콤</span></label>
+<label><input type="checkbox" id="p6" name="p" value="방염"><span>방염 (상업공간)</span></label>
+</div>
+</fieldset>
+<div class="row">
+<div class="f"><label for="rm">창 개수</label><select id="rm" name="rm"><option>1~2개</option><option selected>3~5개</option><option>6~9개</option><option>10개 이상</option></select></div>
+<div class="f"><label for="dt">희망 방문일</label><input type="date" id="dt" name="dt"></div>
+</div>
+<div class="f"><label for="ms">요청 사항</label><textarea id="ms" name="ms" placeholder="입주 날짜, 원하는 분위기, 참고 사진 여부 등을 적어주세요."></textarea></div>
+<label class="agree"><input type="checkbox" id="ag"> 개인정보 수집 · 이용에 동의합니다. (상담 목적, 상담 완료 후 파기)</label>
+<p class="err" id="err" role="alert"></p>
+<div><button type="submit" class="btn dark">무료 방문견적 신청 <span class="en">→</span></button></div>
+</form>
+</div>
+</div>
+</div>
+</section>
+<div class="band" id="band">
+<img class="bg" data-u="1759719441268-7d807f21a4ea" data-w="1800" alt="">
+<div class="wrap">
+<h2>Free Visit Estimate<small>샘플북을 들고 찾아갑니다. 실측과 견적은 무료입니다.</small></h2>
+<a class="btn light" href="#estimate">방문견적 신청 <span class="en">→</span></a>
+</div>
+</div>
+</main>
+<footer class="ft">
+<div class="wrap">
+<div>
+<a href="#home" class="logo"><span class="logo-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span><b>GYEOL</b><small>결 커튼앤블라인드</small></span></a>
+<address>
+<span>대표 김결 · 사업자등록번호 000-00-00000</span>
+<span>경기도 고양시 일산동구 ○○로 00, 1층 쇼룸</span>
+<span>대표 전화 1600-0000 · hello@gyeol.example</span>
+</address>
+<p class="copy">© 2026 GYEOL Curtain &amp; Blind. Portfolio sample by FOMDIT. Photos: Unsplash</p>
+</div>
+<nav aria-label="하단 메뉴"><a href="#home">이용약관</a><a href="#home">개인정보처리방침</a></nav>
+</div>
+</footer>
+<script>
+(function(){
+const IMG='https://images.unsplash.com/photo-';
+function hydrate(root){
+root.querySelectorAll('img[data-u]:not([src])').forEach(img=>{
+const id=img.dataset.u,w=+img.dataset.w||800;
+img.src=IMG+id+'?w='+w+'&q=75&auto=format&fit=crop';
+var hw=Math.round(w/2);img.srcset=IMG+id+'?w='+hw+'&q=75&auto=format&fit=crop '+hw+'w, '+img.src+' '+w+'w';
+img.sizes=w>=1800?'100vw':w>=900?'(max-width:800px) 100vw, 50vw':'(max-width:900px) 50vw, 25vw';
+img.decoding='async';
+if(!img.closest('.hero')) img.loading='lazy';
+const done=()=>img.classList.add('ok');
+img.complete?done():img.addEventListener('load',done,{once:true});
+});
+}
+/* gallery */
+const cases=[
+{t:'일산 아파트 거실',k:'그레이 딤아웃 + 속지',f:'curtain',u:'1754611362309-71297e9f42fd'},
+{t:'파주 단독주택 서재',k:'다크 겉지 커튼',f:'curtain',u:'1765766638330-a180e8a5a990'},
+{t:'마포 오피스',k:'롤스크린',f:'biz',u:'1758315417320-a8bbed64d29b'},
+{t:'김포 신혼집 침실',k:'화이트 속지',f:'curtain',u:'1644955052489-10bda5c94b19'},
+{t:'고양 아파트 안방',k:'콤비 블라인드',f:'blind',u:'1778731525567-a65ec40a4bb5'},
+{t:'성수 레지던스',k:'방염 린넨 속지',f:'biz',u:'1704789202340-85a4786aa2c0'},
+{t:'용산 주택 주방',k:'우드 블라인드 50mm',f:'blind',u:'1582265214834-c02ec775947b'},
+{t:'분당 아파트 거실',k:'쉬폰 속지',f:'curtain',u:'1574197635162-68e4b468e4e9'},
+{t:'서초 욕실 창',k:'방수 블라인드',f:'blind',u:'1779894015350-c5486bf8f618'}
+];
+const card=o=>'<figure class="case" data-f="'+o.f+'"><div class="ph"><img data-u="'+o.u+'" data-w="800" alt="'+o.t+' 시공 사진"></div><figcaption class="case-meta"><b>'+o.t+'</b><span>'+o.k+'</span></figcaption></figure>';
+document.getElementById('homeGal').innerHTML=cases.slice(0,3).map(card).join('');
+const full=document.getElementById('fullGal');
+full.innerHTML=cases.map(card).join('');
+hydrate(document);
+document.querySelectorAll('.filters button').forEach(b=>b.addEventListener('click',()=>{
+document.querySelectorAll('.filters button').forEach(x=>x.classList.toggle('on',x===b));
+full.querySelectorAll('.case').forEach(c=>{c.hidden=!(b.dataset.f==='all'||c.dataset.f===b.dataset.f);});
+}));
+/* hero slider */
+const slides=[...document.querySelectorAll('#hero .slide')],copies=[...document.querySelectorAll('#hero .copy > div')],dots=[...document.querySelectorAll('#hero .ctrl [data-s]:not(.arr)')];
+let cur=0,timer;
+const still=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function go(i){cur=(i+slides.length)%slides.length;[slides,copies,dots].forEach(g=>g.forEach((el,k)=>el.classList.toggle('on',k===cur)));restart();}
+function restart(){clearInterval(timer);if(!still)timer=setInterval(()=>go(cur+1),6500);}
+document.querySelectorAll('#hero .ctrl button').forEach(b=>b.addEventListener('click',()=>{const s=b.dataset.s;go(s==='prev'?cur-1:s==='next'?cur+1:+s);}));
+restart();
+/* routing */
+const views=['home','curtain','blind','gallery','estimate'];
+const nav=document.getElementById('nav'),burger=document.getElementById('burger');
+function show(){
+let v=(location.hash||'#home').slice(1);
+if(!views.includes(v)) v='home';
+views.forEach(n=>document.getElementById('v-'+n).classList.toggle('on',n===v));
+nav.querySelectorAll('a').forEach(a=>a.classList.toggle('on',a.dataset.v===v));
+document.getElementById('band').hidden=(v==='estimate');
+nav.classList.remove('open');burger.setAttribute('aria-expanded','false');
+window.scrollTo(0,0);
+}
+addEventListener('hashchange',show);show();
+burger.addEventListener('click',()=>{const o=nav.classList.toggle('open');burger.setAttribute('aria-expanded',o);});
+document.querySelectorAll('[data-jump]').forEach(a=>a.addEventListener('click',e=>{
+e.preventDefault();
+a.parentElement.querySelectorAll('a').forEach(x=>x.classList.toggle('on',x===a));
+document.getElementById(a.dataset.jump).scrollIntoView({behavior:still?'auto':'smooth'});
+}));
+/* form */
+const form=document.getElementById('estForm'),err=document.getElementById('err');
+form.addEventListener('submit',e=>{
+e.preventDefault();
+const nm=form.nm.value.trim(),ph=form.ph.value.replace(/[^0-9]/g,'');
+if(!nm){err.textContent='이름을 입력해 주세요.';form.nm.focus();return;}
+if(ph.length<9){err.textContent='연락 가능한 전화번호를 숫자로 입력해 주세요.';form.ph.focus();return;}
+if(!document.getElementById('ag').checked){err.textContent='개인정보 수집 · 이용에 동의해야 신청할 수 있습니다.';return;}
+err.textContent='';
+document.getElementById('formBox').innerHTML='<div class="done"><span class="eyebrow">Received</span><h3>'+nm.replace(/[<>&"]/g,'')+'님, 신청서를 받았습니다</h3><p>영업일 기준 하루 안에 담당자가 전화로 방문 일정을 확인합니다. 이 페이지는 포트폴리오 샘플이라 실제 접수는 되지 않습니다.</p></div>';
+});
+})();
+</script>
+</body>
+</html>
